@@ -211,20 +211,21 @@ namespace SortDesktopIcons
             var view = (IFolderView)browser.QueryActiveShellView();
             var view2 = (IFolderView2)view;
 
+            // First let windows sort the desktop - let it figure our spacing, size, etc.
+            // Then sort by type and name
             view2.SetCurrentFolderFlags((int)(FOLDERFLAGS.FWF_SNAPTOGRID | FOLDERFLAGS.FWF_AUTOARRANGE),
                 (int)(FOLDERFLAGS.FWF_SNAPTOGRID | FOLDERFLAGS.FWF_AUTOARRANGE));
             if (desktopHandle != IntPtr.Zero)
             {
                 SendMessage(desktopHandle, WM_COMMAND, new IntPtr(CMD_SORT_BY_NAME), IntPtr.Zero);
-                Console.WriteLine("Desktop icons sorted by name.");
+                //Console.WriteLine("Desktop icons sorted by name.");
             }
             view2.SetCurrentFolderFlags((int)(FOLDERFLAGS.FWF_AUTOARRANGE), 0);
             var icons = new List<icon>();
 
-            // get all items, dump & sets their position (here y+= 150)
+            // replace the icons with the sorted list.
             for (var i = 0; i < view.ItemCount(); i++)
             {
-                // get some item's info to be able to determine if we want to move it or not
                 var item = view2.GetItem(i, typeof(IShellItem).GUID);
                 uint attrib = (uint)SFGAO.FOLDER;
                 var type = item.GetAttributesOf(attrib) == 0 ? "File" : "Folder";
@@ -235,7 +236,7 @@ namespace SortDesktopIcons
 
                 var ic = new icon { index = i, locn = pt, name = displayName, pid = pidl, type = type };
                 icons.Add(ic);
-                Console.WriteLine(ic.ToString());
+                //Console.WriteLine(ic.ToString());
             }
             var byPos = new List<icon>();
             byPos =
@@ -252,8 +253,8 @@ namespace SortDesktopIcons
             var locns = new List<POINT>();
             for (int i = 0; i < sortedIcons.Count(); i++)
             {
-                var tempIcon = sortedIcons[i]; // Create a temporary variable
-                tempIcon.locn = byPos[i].locn; // Modify the temporary variable
+                var tempIcon = sortedIcons[i];
+                tempIcon.locn = byPos[i].locn;
                 sortedIcons[i] = tempIcon;
                 ptrs.Add(tempIcon.pid);
                 locns.Add(tempIcon.locn);
