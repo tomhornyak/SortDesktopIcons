@@ -8,7 +8,7 @@ Clone the project and build with Visual Studio 2022
 
 ### Prerequisites
 
-.NET Framework 4.8, Visual Studio 2022
+.NET Framework 4.8, Visual Studio 2022 with the ""Microsoft Visual Studio Installer Projects 2022"" extension.
 
 
 ### Installing

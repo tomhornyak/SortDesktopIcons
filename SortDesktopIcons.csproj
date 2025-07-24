@@ -70,6 +70,12 @@
     <LangVersion>latest</LangVersion>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SignKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -95,6 +101,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="SortIcons.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -114,6 +121,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="README.md" />
+    <None Include="SignKey.snk" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="SHDocVw">
@@ -136,7 +144,14 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="InnoSetup\Output\SortDesktopIcons.exe" />
+    <Content Include="InnoSetup\SortIconsSetup.iss" />
     <Content Include="SortIcons.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if "$(ConfigurationName)" == "Release" (
+iscc $(SolutionDir)InnoSetup\SortIconsSetup.iss
+)</PostBuildEvent>
+  </PropertyGroup>
 </Project>
