@@ -8,8 +8,9 @@ Clone the project and build with Visual Studio 2022
 
 ### Prerequisites
 
-.NET Framework 4.8, Visual Studio 2022
-Inno Setup to build the installer
+.NET Framework 4.8  
+Visual Studio 2022  
+Inno Setup to build the installer  
 
 
 ### Installing
