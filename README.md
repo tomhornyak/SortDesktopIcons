@@ -1,4 +1,4 @@
-# Project Title
+# Sort Desktop Icons
 
 This is program that sorts Windows desktop Icons first by type, than by name. Folders are sorted first, than shortcuts.
 
