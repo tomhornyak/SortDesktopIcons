@@ -8,12 +8,13 @@ Clone the project and build with Visual Studio 2022
 
 ### Prerequisites
 
-.NET Framework 4.8, Visual Studio 2022 with the ""Microsoft Visual Studio Installer Projects 2022"" extension.
+.NET Framework 4.8, Visual Studio 2022
+Inno Setup to build the installer
 
 
 ### Installing
 
-Build a release version of the solution and the installer will be in SortIconsSetup\Release
+Build a release version of the solution and the installer will be in InnoSetup\Output
 
 ## Contributing
 
@@ -26,5 +27,5 @@ This project is not open for contributions right now. Please log any issues or q
 
 ## License
 
-This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 3 - see the [license.txt] file for details
+This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 3 - see the license.txt file for details
 
