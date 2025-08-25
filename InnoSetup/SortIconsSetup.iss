@@ -42,6 +42,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "{#MyExePath}{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#MyExePath}SortDesktopIcons.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyExePath}license.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyExePath}ReadMe.html"; DestDir: "{app}"; Flags: ignoreversion
 Source: C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Net.Http.dll; DestDir: "{app}"
 Source: "{#MySourcePath}{#MyAppIconName}"; DestDir: "{app}";
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
