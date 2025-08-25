@@ -146,6 +146,7 @@
   <ItemGroup>
     <Content Include="InnoSetup\Output\SortDesktopIcons.exe" />
     <Content Include="InnoSetup\SortIconsSetup.iss" />
+    <Content Include="license.txt" />
     <Content Include="SortIcons.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

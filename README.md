@@ -11,7 +11,7 @@ Clone the project and build with Visual Studio 2022
 .NET Framework 4.8  
 Visual Studio 2022  
 Inno Setup to build the installer  
-
+iscc (Inno Setup Command Line Compiler) must be in your PATH environment variable
 
 ### Installing
 
@@ -28,5 +28,5 @@ This project is not open for contributions right now. Please log any issues or q
 
 ## License
 
-This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 3 - see the license.txt file for details
+This project is licensed under the MIT License - see the license.txt file for details
 

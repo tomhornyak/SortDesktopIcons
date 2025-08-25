@@ -1,5 +1,10 @@
-﻿// Copyright (c) 2025 Thomas F. Hornyak, Tom Hornyak Enterprise LLC
-
+﻿/* Copyright (C) 2023 - 2025 Thomas F. Hornyak, Tom Hornyak Enterprise LLC - All Rights Reserved
+ * You may use, distribute and modify this code under the
+ * terms of theMIT PUBLIC LICENSE Version 3, 29 June 2007 license
+ *
+ * You should have received a copy of the  license with
+ * this software. If not, visit: https://www.gnu.org/licenses/gpl-3.0.en.html
+ */
 using System;
 using System.Collections.Generic;
 using System.Linq;
